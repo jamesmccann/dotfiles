@@ -1,15 +1,27 @@
-u VimEnter *  NERDTree
 
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
+"autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+"
 " Close all open buffers on entering a window if the only
 " " buffer that's left is the NERDTree buffer
-" function! s:CloseIfOnlyNerdTreeLeft()
-"   if exists("t:NERDTreeBufName")
-"       if bufwinnr(t:NERDTreeBufName) != -1
-"             if winnr("$") == 1
-"                     q
-"             endif
-"       endif
-"   endif
-" endfunction
+ function! s:CloseIfOnlyNerdTreeLeft()
+   if exists("t:NERDTreeBufName")
+       if bufwinnr(t:NERDTreeBufName) != -1
+             if winnr("$") == 1
+                     q
+             endif
+       endif
+   endif
+ endfunction
+
+function! s:AutoResize()
+endfunction
+
+augroup AutoResize
+  autocmd!
+  autocmd WinEnter * call <sid>AutoResize()
+augroup END
+
+autocmd VimEnter *  NERDTree
+
+" Hide warnings for proprietary angular attributes
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]

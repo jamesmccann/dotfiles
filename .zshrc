@@ -12,8 +12,13 @@ ZSH_THEME="robbyrussell"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias 3m="cd ~/3months"
 alias movsim="cd ~/SWEN489/movsim"
+alias report="cd /Users/james/Dropbox/ENGR489/FinalReport/report"
 
 alias subl='nocorrect subl ' 
+
+alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
+
+alias gdc='git diff --cached'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -44,5 +49,8 @@ source $ZSH/oh-my-zsh.sh
 PATH=$PATH:/$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+export JAVA_HOME=`/usr/libexec/java_home`
+
 __rvm_project_rvmrc
+
 
