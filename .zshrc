@@ -13,8 +13,8 @@ ZSH_THEME="robbyrussell"
 alias 3m="cd ~/3months"
 alias movsim="cd ~/SWEN489/movsim"
 alias report="cd /Users/james/Dropbox/ENGR489/FinalReport/report"
-
 alias subl='nocorrect subl ' 
+alias hist='history | grep' 
 
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
@@ -47,7 +47,7 @@ source $ZSH/oh-my-zsh.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 # Customize to your needs...
 PATH=$PATH:/$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH
 
 export JAVA_HOME=`/usr/libexec/java_home`
 
