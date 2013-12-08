@@ -14,6 +14,7 @@ alias 3m="cd ~/3months"
 alias movsim="cd ~/SWEN489/movsim"
 alias report="cd /Users/james/Dropbox/ENGR489/FinalReport/report"
 alias subl='nocorrect subl ' 
+alias cap='nocorrect cap '
 alias hist='history | grep' 
 
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'

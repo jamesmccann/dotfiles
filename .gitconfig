@@ -1,0 +1,19 @@
+[user]
+	name = James McCann
+	email = jmccnz@gmail.com
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[color "status"]
+  changed = yellow
+  added = green
+  untracked = red
+[alias]
+  gl = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  standup = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --since yesterday --author jmccnz@gmail.com
+  gup = pull --rebase
+  gpu = push origin master
+  dc = diff --cached
+
