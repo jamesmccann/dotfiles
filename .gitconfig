@@ -17,3 +17,5 @@
   gpu = push origin master
   dc = diff --cached
 
+[core]
+	autocrlf = input

@@ -32,3 +32,8 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 set noequalalways
 
 hi Search guibg=peru guifg=wheat
+
+set tabstop=2 shiftwidth=2 expandtab
+
+" highlight trailing whitespace
+autocmd FileWritePre * match ErrorMsg '\s\+$'
