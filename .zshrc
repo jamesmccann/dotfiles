@@ -10,17 +10,11 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias 3m="cd ~/3months"
 alias subl='nocorrect subl '
 alias cap='nocorrect cap '
 alias gradle='nocorrect gradle'
 alias hist='history | grep'
 alias gti='git'
-alias ghc="/usr/bin/open -a '/Applications/Google Chrome.app' 'http://github.com/3months/consumer'"
-alias be="bundle exec "
-
-alias ggl='git gl'
-alias gcmp='gcm && ggpull'
 alias gdc='git diff --cached'
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
