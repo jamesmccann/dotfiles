@@ -9,8 +9,6 @@ alias subl='nocorrect subl '
 alias cap='nocorrect cap '
 alias gradle='nocorrect gradle'
 alias hist='history | grep'
-alias ggl='git gl'
-alias gcmp='gcm && ggpull'
 alias gdc='git diff --cached'
 
 plugins=(git rails autojump)
