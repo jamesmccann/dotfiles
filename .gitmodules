@@ -1,3 +1,6 @@
 [submodule "vim/plugins/vim-closetag"]
 	path = vim/plugins/vim-closetag
 	url = git@github.com:alvan/vim-closetag.git
+[submodule "vim/plugins/editorconfig-vim"]
+	path = vim/plugins/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git

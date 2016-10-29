@@ -13,4 +13,8 @@ color kellys
 :set guioptions-=L
 :set guioptions-=r
 
+au BufNewFile,BufRead *.ejs set filetype=html
 
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/vendor/ruby*
