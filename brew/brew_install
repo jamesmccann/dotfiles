@@ -14,7 +14,10 @@ lua
 macvim
 maven
 nmap
+node
 openssl
+pass
+postgis
 postgresql
 rbenv
 redis
