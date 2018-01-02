@@ -3,7 +3,7 @@
 # install homebrew
 # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-install brew / cask pre-reqs
+# install brew / cask pre-reqs
 brew install caskroom/cask/brew-cask
 brew cask install java
 
