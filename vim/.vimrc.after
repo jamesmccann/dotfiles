@@ -18,3 +18,8 @@ au BufNewFile,BufRead *.ejs set filetype=html
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/vendor/ruby*
+
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
