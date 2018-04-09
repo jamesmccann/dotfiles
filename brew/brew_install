@@ -1,12 +1,8 @@
 ag
 ack
 android-sdk
-android-ndk
 autojump
 automake
-caskroom/cask/brew-cask
-ctags
-git
 gradle
 htop-osx
 imagemagick
@@ -24,4 +20,5 @@ rbenv
 redis
 ruby-build
 xctool
+go
 

@@ -12,6 +12,8 @@ alias hist='history | grep'
 alias gdc='git diff --cached'
 alias be='bundle exec'
 alias t15='termdown 15m -s --no-figlet && spotify pause && afplay /System/Library/Sounds/Glass.aiff'
+alias dc='docker-compose'
+alias dotenv='godotenv'
 
 plugins=(git rails autojump)
 source $ZSH/oh-my-zsh.sh
@@ -25,3 +27,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:~/.npm/bin:/usr/local/share/npm/bin:/
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
+
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
