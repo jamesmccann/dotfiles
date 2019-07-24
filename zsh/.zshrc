@@ -3,18 +3,15 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias subl='nocorrect subl '
 alias cap='nocorrect cap '
 alias gradle='nocorrect gradle'
 alias hist='history | grep'
 alias gdc='git diff --cached'
 alias be='bundle exec'
-alias t15='termdown 15m -s --no-figlet && spotify pause && afplay /System/Library/Sounds/Glass.aiff'
+alias t15='termdown 15m -s --no-figlet && afplay /System/Library/Sounds/Glass.aiff'
 alias hs='bundle exec hanami server'
 alias hc='bundle exec hanami console'
-alias dotenv='godotenv'
 
 plugins=(git rails autojump)
 source $ZSH/oh-my-zsh.sh
@@ -39,3 +36,5 @@ export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
+export GO111MODULE=on
