@@ -1,6 +1,7 @@
 [user]
 	name = James McCann
-	email = james@messagebird.com
+	email = jmccnz@gmail.com
+	signingkey = E3865B077F4079FB5390CB67F65CE39CE44A7A32
 
 [color]
   diff = auto
@@ -23,3 +24,5 @@
 	autocrlf = input
 [merge]
 	tool = opendiff
+[commit]
+	gpgsign = true
