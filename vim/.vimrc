@@ -11,6 +11,7 @@ Plug 'wincent/command-t', {
 Plug 'airblade/vim-rooter'
 Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-signify'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -78,9 +79,25 @@ noremap <Right> <NOP>
 let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
 nnoremap <leader>a :Ack<space>
 
+" Ale
+" ----------------
+let g:ale_fix_on_save = 1
+
+let g:ale_linters = {
+\   'go': ['golint', 'go build'],
+\}
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'go': ['goimports'],
+\}
+
 " Language: golang
 " ----------------
 au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
+
+let g:go_fmt_command = "goimports"
+
