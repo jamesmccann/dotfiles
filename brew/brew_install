@@ -5,12 +5,15 @@ autojump
 automake
 gradle
 htop-osx
+httpie
 imagemagick
+jq
 libxml2
 lua
 macvim
 maven
 modd
+expect
 nmap
 node
 openssl
@@ -22,4 +25,3 @@ redis
 ruby-build
 xctool
 go
-
