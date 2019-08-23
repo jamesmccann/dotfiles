@@ -5,13 +5,13 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'jonathanfilip/vim-lucius'
 Plug 'mileszs/ack.vim'
-Plug 'wincent/command-t', {
-  \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-  \ }
 Plug 'airblade/vim-rooter'
 Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-signify'
 Plug 'w0rp/ale'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -28,7 +28,6 @@ set expandtab
 set title
 
 set number                          " show number ruler
-" set relativenumber                " show relative numbers in the ruler
 nmap <leader>ln :set invrelativenumber<cr>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/vendor/ruby*
@@ -45,12 +44,16 @@ autocmd FileWritePre * match ErrorMsg '\s\+$' " highlight trailing whitespace
 " ----------------
 let NERDTreeMinimalUI=1
 
-" Auto-enter NERDTree
-autocmd VimEnter * NERDTree
-autocmd VimEnter * set winfixwidth
+map <leader>n :NERDTreeToggle<cr>
+
+" Auto-enter NERDTree in Macvim only
+if has("gui_running")
+  autocmd VimEnter * NERDTree
+  autocmd VimEnter * set winfixwidth
+end
 
 " Quit if only nerdtree left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Colours
 " ----------------
@@ -77,7 +80,26 @@ noremap <Right> <NOP>
 
 " use ag for grep searching
 let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
-nnoremap <leader>a :Ack<space>
+nmap <leader>a :Ack<space>
+
+" Move between buffers with Shift + bracket keys
+nnoremap { :bprevious<cr>
+nnoremap } :bnext<cr>
+
+" and swap previous buffers with Shift + \
+nnoremap <Bar> :b#<cr>
+
+" but skip the quickfix when navigating
+augroup qf
+    autocmd!
+    autocmd FileType qf set nobuflisted
+augroup END
+
+
+" FZF
+" ----------------
+nmap <leader>t :Files<enter>
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Ale
 " ----------------
@@ -100,4 +122,3 @@ au FileType go set softtabstop=4
 au FileType go set tabstop=4
 
 let g:go_fmt_command = "goimports"
-
