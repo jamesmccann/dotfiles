@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
+Plug 'airblade/vim-rooter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'jonathanfilip/vim-lucius'
@@ -8,7 +9,6 @@ Plug 'mileszs/ack.vim'
 Plug 'wincent/command-t', {
   \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
   \ }
-Plug 'airblade/vim-rooter'
 Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-signify'
 Plug 'w0rp/ale'
@@ -20,6 +20,7 @@ set autoindent                    " take indent for new line from previous line
 set smartindent                   " enable smart indentation
 set autoread                      " reload file if the file changes on the disk
 set wrap
+set autochdir                     " set working directory to target
 
 set tabstop=2
 set softtabstop=2
@@ -43,14 +44,18 @@ autocmd FileWritePre * match ErrorMsg '\s\+$' " highlight trailing whitespace
 
 " NERDTree
 " ----------------
+autocmd VimEnter * silent! lcd %:p:h       " change to current working directory
+
 let NERDTreeMinimalUI=1
 
-" Auto-enter NERDTree
-autocmd VimEnter * NERDTree
-autocmd VimEnter * set winfixwidth
+" Auto-enter NERDTree in Macvim only
+if has("gui_running")
+  autocmd VimEnter * NERDTree
+  autocmd VimEnter * set winfixwidth
+endif
 
 " Quit if only nerdtree left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Colours
 " ----------------
@@ -101,3 +106,9 @@ au FileType go set tabstop=4
 
 let g:go_fmt_command = "goimports"
 
+" Language: proto
+" ----------------
+au FileType proto set noexpandtab
+au FileType proto set shiftwidth=4
+au FileType proto set softtabstop=4
+au FileType proto set tabstop=4
