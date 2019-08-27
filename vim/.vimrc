@@ -6,12 +6,13 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'jonathanfilip/vim-lucius'
 Plug 'mileszs/ack.vim'
-Plug 'wincent/command-t', {
-  \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-  \ }
+Plug 'airblade/vim-rooter'
 Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-signify'
 Plug 'w0rp/ale'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -29,7 +30,6 @@ set expandtab
 set title
 
 set number                          " show number ruler
-" set relativenumber                " show relative numbers in the ruler
 nmap <leader>ln :set invrelativenumber<cr>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/vendor/ruby*
@@ -47,6 +47,8 @@ autocmd FileWritePre * match ErrorMsg '\s\+$' " highlight trailing whitespace
 autocmd VimEnter * silent! lcd %:p:h       " change to current working directory
 
 let NERDTreeMinimalUI=1
+
+map <leader>n :NERDTreeToggle<cr>
 
 " Auto-enter NERDTree in Macvim only
 if has("gui_running")
@@ -82,7 +84,26 @@ noremap <Right> <NOP>
 
 " use ag for grep searching
 let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
-nnoremap <leader>a :Ack<space>
+nmap <leader>a :Ack<space>
+
+" Move between buffers with Shift + bracket keys
+nnoremap { :bprevious<cr>
+nnoremap } :bnext<cr>
+
+" and swap previous buffers with Shift + \
+nnoremap <Bar> :b#<cr>
+
+" but skip the quickfix when navigating
+augroup qf
+    autocmd!
+    autocmd FileType qf set nobuflisted
+augroup END
+
+
+" FZF
+" ----------------
+nmap <leader>t :Files<enter>
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Ale
 " ----------------
