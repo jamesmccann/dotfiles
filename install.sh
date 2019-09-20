@@ -20,3 +20,7 @@ ln -sf ~/.dotfiles/.vimrc ~/.vimrc
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# kill desktop icons
+defaults write com.apple.finder CreateDesktop false
+killall Finder
