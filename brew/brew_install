@@ -1,12 +1,12 @@
 ag
 ack
-android-sdk
 autojump
 automake
-gradle
 htop-osx
 httpie
-imagemagick
+go
+gnupg
+java
 jq
 libxml2
 lua
@@ -24,4 +24,3 @@ rbenv
 redis
 ruby-build
 xctool
-go
