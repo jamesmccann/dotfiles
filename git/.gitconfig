@@ -22,7 +22,8 @@
 
 [core]
 	autocrlf = input
+  excludesfile = ~/.gitignore
 [merge]
 	tool = opendiff
 [commit]
-	gpgsign = true
+	gpgsign = false

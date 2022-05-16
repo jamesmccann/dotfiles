@@ -28,3 +28,6 @@ defaults write -g KeyRepeat -int 1
 # kill desktop icons
 defaults write com.apple.finder CreateDesktop false
 killall Finder
+
+# goimports
+go install golang.org/x/tools/cmd/goimports@latest

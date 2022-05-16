@@ -20,14 +20,17 @@ alias uuid="uuidgen | tr -d - | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcop
 
 export EDITOR=vim
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:~/.npm/bin:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GOPATH/bin:$GOROOT/bin
+export GOROOT=/opt/homebrew/opt/golang/libexec
+export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 export GO111MODULE=on
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
 
-# export GPG_TTY="$(tty)"
-# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-# gpg-connect-agent updatestartuptty /bye
-# gpgconf --launch gpg-agent
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpg-connect-agent updatestartuptty /bye
+gpgconf --launch gpg-agent

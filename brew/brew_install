@@ -5,6 +5,7 @@ automake
 htop-osx
 httpie
 go
+gopls
 gnupg
 java
 jq

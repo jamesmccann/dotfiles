@@ -44,10 +44,10 @@ autocmd FileWritePre * match ErrorMsg '\s\+$' " highlight trailing whitespace
 
 " NERDTree
 " ----------------
-autocmd VimEnter * silent! lcd %:p:h       " change to current working directory
-
 let NERDTreeMinimalUI=1
 
+autocmd VimEnter * silent! lcd %:p:h       " change to current working directory
+map <leader>r :NERDTreeFind<cr>            " change to current file directory
 map <leader>n :NERDTreeToggle<cr>
 
 " Auto-enter NERDTree in Macvim only
