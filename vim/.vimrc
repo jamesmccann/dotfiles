@@ -133,3 +133,10 @@ au FileType proto set noexpandtab
 au FileType proto set shiftwidth=4
 au FileType proto set softtabstop=4
 au FileType proto set tabstop=4
+
+" Language: html
+" ----------------
+au FileType html set noexpandtab
+au FileType html set shiftwidth=2
+au FileType html set softtabstop=2
+au FileType html set tabstop=2

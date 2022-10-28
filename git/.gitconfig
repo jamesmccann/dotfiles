@@ -27,3 +27,5 @@
 	tool = opendiff
 [commit]
 	gpgsign = false
+[pull]
+	ff = only
